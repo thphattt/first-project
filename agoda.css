@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 72px;
+}
+
+.header-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-left: 40px;
+    flex: 1;
+}
+
+.nav-item {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2a2a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    height: 48px;
+    padding-top: 12px;
+}
+
+.nav-item:hover {
+    color: #5392f9;
+}
+
+.nav-item .tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    background: #e12d2d;
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+    visibility: visible;
+    position: absolute;
+    top: -4px;
+    line-height: 15px;
+}
+
+.nav-item .tag.placeholder {
+    visibility: hidden;
+    height: 15px;
+    position: absolute;
+    top: -2px;
+}
+
+.nav-item .tag.red {
+    background: #e12d2d;
+}
+
+.nav-item .nav-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.nav-item .dropdown-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-login, .btn-signup {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-login {
+    background: none;
+    color: #1273c4;
+}
+
+.btn-login:hover {
+    background: #b8deff;
+}
+
+.btn-signup {
+    background: #1273c4;
+    color: white;
+}
+
+.btn-signup:hover {
+    background: #0e5ea0;
+}
+
+.btn-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #2a2a2e;
+    position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #2a2a2e;
+    left: 0;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.455)), url('https://pix6.agoda.net/geo/city/16440/1_16440_02.jpg?ca=6&ce=1&s=1920x822');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 24px;
+    margin-top: 72px;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 16px;
+    margin-bottom: 32px;
+    max-width: 600px;
+}
+
+.search-box {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    max-width: 1160px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.search-input {
+    flex: 2;
+    position: relative;
+}
+
+.search-icon,
+.calendar-icon,
+.person-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.search-icon svg,
+.calendar-icon svg,
+.person-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #687282;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2a2a2e;
+}
+
+.search-input input:focus {
+    outline: none;
+    border-color: #1273c4;
+}
+
+.date-picker {
+    flex: 2;
+    display: flex;
+    gap: 16px;
+}
+
+.check-in, .check-out {
+    flex: 1;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    min-width: 140px;
+    color: #2a2a2e;
+}
+
+.check-in:hover, .check-out:hover {
+    border-color: #1273c4;
+}
+
+.guests {
+    flex: 1;
+    padding: 12px 40px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+.guests:hover {
+    border-color: #1273c4;
+}
+
+.guest-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #2a2a2e;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #687282;
+}
+
+.search-button {
+    padding: 12px 32px;
+    background: #1273c4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 120px;
+    transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+    background: #0e5ea0;
+}
+
+@media (max-width: 1024px) {
+    .search-box {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        flex: 100%;
+    }
+
+    .date-picker {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 64px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+    
+    .btn-menu {
+        display: block;
+    }
+    
+    .auth-buttons button:not(.btn-menu) {
+        display: none;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .date-picker {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .hero-section {
+        margin-top: 64px;
+        padding: 0 16px;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+    
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .check-in, .check-out, .guests {
+        width: 100%;
+    }
+}
